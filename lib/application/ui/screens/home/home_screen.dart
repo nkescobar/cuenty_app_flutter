@@ -29,7 +29,9 @@ class _HomeScreenState extends State<HomeScreen> {
           child: HomeAppBarTitleWidget(),
         ),
       ),
-      body: Column(children: const [TopHomeBodyWidget()]),
+      body: Column(children: const [
+        TopHomeBodyWidget(),
+      ]),
     );
   }
 }

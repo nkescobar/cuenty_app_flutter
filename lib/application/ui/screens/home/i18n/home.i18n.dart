@@ -3,6 +3,7 @@ import 'package:i18n_extension/i18n_extension.dart';
 class HomeStrings {
   static const String home = 'Home!';
   static const String welcome = 'Welcome';
+  static const String budget = 'Your Budget';
 }
 
 extension Localization on String {
@@ -14,6 +15,10 @@ extension Localization on String {
       {
         'en_us': HomeStrings.welcome,
         'es_co': 'Bienvenido',
+      } +
+      {
+        'en_us': HomeStrings.budget,
+        'es_co': 'Tu presupuesto',
       };
 
   String get i18n => localize(this, _t);
