@@ -1,0 +1,1 @@
+enum TypeSummaryCardEnum { incomes, spending }
