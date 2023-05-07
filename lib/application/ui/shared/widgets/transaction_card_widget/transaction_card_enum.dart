@@ -1,0 +1,1 @@
+enum TypeTransactionCard { incomes, expenses }
