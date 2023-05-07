@@ -6,8 +6,11 @@ class AppSizes {
   static const double paddingM = 8.0;
   static const double paddingL = 12.0;
   static const double paddingLSlim = 16.0;
+  static const double paddingL20 = 20.0;
+
   static const double paddingXLSlim = 24.0;
   static const double paddingXL = 32.0;
+  static const double paddingXXLSlim = 40.0;
   static const double paddingXXL = 45.0;
 
   // Margin
@@ -46,6 +49,7 @@ class AppSizes {
 
   static const double heightL = 40.0;
   static const double heightXL = 97.0;
+  static const double heightXLSlim = 104.0;
 
   // width
   static const double widthL = 40.0;

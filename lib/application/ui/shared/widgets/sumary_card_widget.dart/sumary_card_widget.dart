@@ -1,22 +1,24 @@
+import 'package:cuenty_app/application/ui/shared/widgets/custom_money_display_widget.dart/index.dart';
 import 'package:flutter/material.dart';
 // Design
 import 'package:cuenty_app/application/app/design/index.dart'
     show AppColors, AppRadius, AppSizes;
 // Enum
 import 'package:cuenty_app/application/ui/shared/widgets/index.dart'
-    show TypeSummaryCardEnum;
+    show Localization, SumaryStrings, TypeSummaryCardEnum;
 
 class SumaryCardWidget extends StatelessWidget {
   final TypeSummaryCardEnum typeSummaryCard;
   final double amount;
   final String period;
   final void Function()? action;
-  const SumaryCardWidget(
-      {super.key,
-      required this.typeSummaryCard,
-      required this.amount,
-      required this.period,
-      required this.action});
+  const SumaryCardWidget({
+    super.key,
+    required this.typeSummaryCard,
+    required this.amount,
+    required this.period,
+    required this.action,
+  });
   @override
   Widget build(BuildContext context) {
     var incomesIcon = const Icon(
@@ -52,12 +54,50 @@ class SumaryCardWidget extends StatelessWidget {
           Expanded(
             child: Text(
               typeSummaryCard == TypeSummaryCardEnum.incomes
-                  ? 'Incomes'
-                  : 'Spending',
+                  ? SumaryStrings.incomes.i18n
+                  : SumaryStrings.spending.i18n,
               style: Theme.of(context).textTheme.displaySmall,
             ),
           ),
-          Container()
+          Container(
+            margin: const EdgeInsets.only(right: AppSizes.marginLSlim),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                CustomMoneyDisplayWidget(
+                  padding: const EdgeInsets.only(
+                      top: AppSizes.paddingXS, right: AppSizes.paddingS),
+                  amount: amount,
+                  amountStyle: Theme.of(context).textTheme.displayMedium!,
+                  amountStyleSmall: Theme.of(context).textTheme.displaySmall!,
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(2.0),
+                  child: Text(
+                    period,
+                    style: const TextStyle(
+                        color: AppColors.brandLightColor,
+                        fontFamily: 'RobotoMono',
+                        fontSize: AppSizes.fontSizeXS),
+                  ),
+                ),
+              ],
+            ),
+          ),
+          Container(
+            height: 40,
+            width: 40,
+            decoration: BoxDecoration(
+                borderRadius: const BorderRadius.all(Radius.circular(12)),
+                border: Border.all(color: AppColors.brandLightColorBorder)),
+            child: IconButton(
+              icon: const Icon(
+                Icons.chevron_right,
+                color: Colors.white,
+              ),
+              onPressed: action,
+            ),
+          ),
         ],
       ),
     );

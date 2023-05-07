@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:cuenty_app/application/ui/screens/home/i18n/home.i18n.dart';
 // Shared Widgets
 import 'package:cuenty_app/application/ui/shared/widgets/index.dart'
-    show CustomMoneyDisplayWidget;
+    show CustomMoneyDisplayWidget, SumaryCardWidget, TypeSummaryCardEnum;
 // Design
 import 'package:cuenty_app/application/app/design/index.dart'
     show AppColors, AppRadius, AppSizes;
+// Strings
+//Strings
+import 'package:cuenty_app/application/ui/screens/home/i18n/home.i18n.dart';
 
 class TopHomeBodyWidget extends StatelessWidget {
   const TopHomeBodyWidget({super.key});
@@ -13,15 +15,13 @@ class TopHomeBodyWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.all(AppSizes.paddingLSlim),
-      width: MediaQuery.of(context).size.width,
+      padding: const EdgeInsets.all(AppSizes.paddingL),
       transform: Matrix4.translationValues(0, -12, 0),
       decoration: const BoxDecoration(
         color: AppColors.brandPrimaryColor,
         borderRadius: BorderRadius.only(
             bottomLeft: AppRadius.small, bottomRight: AppRadius.small),
       ),
-      // height: 389,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -41,6 +41,18 @@ class TopHomeBodyWidget extends StatelessWidget {
                 fontSize: 16,
                 fontWeight: FontWeight.bold,
                 color: AppColors.brandLightColor),
+          ),
+          SumaryCardWidget(
+            typeSummaryCard: TypeSummaryCardEnum.incomes,
+            amount: 700000,
+            period: 'From January 1 to January 31',
+            action: () => print('incomes'),
+          ),
+          SumaryCardWidget(
+            typeSummaryCard: TypeSummaryCardEnum.spending,
+            amount: 90000,
+            period: 'From January 1 to January 31',
+            action: () => print('spending'),
           ),
         ],
       ),

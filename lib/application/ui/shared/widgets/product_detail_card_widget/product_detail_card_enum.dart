@@ -1,0 +1,1 @@
+enum TypeProductDetailCard { incomes, outcomes }
