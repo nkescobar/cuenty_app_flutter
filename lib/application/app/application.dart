@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
-import 'package:i18n_extension/i18n_widget.dart';
 
+import 'package:cuenty_app/application/app/router/router.dart';
 import 'package:cuenty_app/application/app/design/index.dart' show AppThemes;
-import 'package:cuenty_app/application/ui/screens/index.dart' show HomeScreen;
+import 'package:cuenty_app/application/app/config/index.dart' show AppRoutes;
 
 class CuentyApp extends StatefulWidget {
   const CuentyApp({super.key});
@@ -27,12 +27,8 @@ class _CuentyAppState extends State<CuentyApp> {
       ],
       debugShowCheckedModeBanner: false,
       theme: AppThemes.defaultTheme,
-      home: I18n(
-        initialLocale: const Locale('es', 'CO'),
-        child: const HomeScreen(
-          key: Key('home page'),
-        ),
-      ),
+      onGenerateRoute: AppRouter.generateRoute,
+      initialRoute: AppRoutes.initialRoute,
     );
   }
 }

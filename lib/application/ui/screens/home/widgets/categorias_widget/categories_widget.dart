@@ -1,3 +1,4 @@
+import 'package:cuenty_app/application/app/config/index.dart';
 import 'package:flutter/material.dart';
 //Strings
 import 'package:cuenty_app/application/ui/screens/home/i18n/home.i18n.dart';
@@ -22,6 +23,7 @@ class CategoriesWidget extends StatelessWidget {
           ),
           onPressed: () {
             print('le diste clic a view all');
+            Navigator.of(context).pushNamed(AppRoutes.newScreenRoute);
           },
         ),
         const ProductDetailCardWidget(
