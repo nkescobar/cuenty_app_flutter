@@ -54,28 +54,37 @@ class _HomeScreenState extends State<HomeScreen> {
           child: HomeAppBarTitleWidget(),
         ),
       ),
-      body: Column(children: [
-        const TopHomeBodyWidget(),
-        MidHomeBodyWidget(
-          categorieBtnStyle: categorieBtnStyle,
-          recentTransactionsBtnStyle: recentTransactionsBtnStyle,
-          categoriesBtnAction: () {
-            setState(() {
-              currentDetailWidget = const CategoriesWidget();
-              categorieBtnStyle = buttonStyleActive;
-              recentTransactionsBtnStyle = buttonStyleInactive;
-            });
-          },
-          recentBtnAction: () {
-            setState(() {
-              categorieBtnStyle = buttonStyleInactive;
-              recentTransactionsBtnStyle = buttonStyleActive;
-              currentDetailWidget = const RecentTransactionsWidget();
-            });
-          },
+      body: SafeArea(
+        child: SingleChildScrollView(
+          child: Column(
+            children: const [
+              TopHomeBodyWidget(),
+              TopHomeBodyWidget(),
+            ],
+          ),
         ),
-        Expanded(child: currentDetailWidget)
-      ]),
+      ),
     );
   }
+
+  /* const TopHomeBodyWidget(),
+          MidHomeBodyWidget(
+            categorieBtnStyle: categorieBtnStyle,
+            recentTransactionsBtnStyle: recentTransactionsBtnStyle,
+            categoriesBtnAction: () {
+              setState(() {
+                currentDetailWidget = const CategoriesWidget();
+                categorieBtnStyle = buttonStyleActive;
+                recentTransactionsBtnStyle = buttonStyleInactive;
+              });
+            },
+            recentBtnAction: () {
+              setState(() {
+                categorieBtnStyle = buttonStyleInactive;
+                recentTransactionsBtnStyle = buttonStyleActive;
+                currentDetailWidget = const RecentTransactionsWidget();
+              });
+            },
+          ),
+          Expanded(child: currentDetailWidget)*/
 }
