@@ -1,6 +1,6 @@
 # cuenty_app
 
-A new Flutter project.
+Cuenty is an accounting app specifically designed for small shops and businesses. With Cuenty, business owners can keep accurate and efficient records of their accounts, expenses, and income in a simple and reliable way. The app offers an intuitive and user-friendly interface, allowing users to effectively manage their finances without prior accounting knowledge. Cuenty offers features such as sales tracking, expense recording, inventory management, financial reporting, and more. Additionally, the app can also help users set budgets, calculate taxes, and maintain detailed control of their business transactions. Cuenty presents itself as a trusted virtual accountant, providing users with a comprehensive and accessible tool to efficiently manage their finances and make informed decisions for their business growth.
 
 ## Getting Started
 

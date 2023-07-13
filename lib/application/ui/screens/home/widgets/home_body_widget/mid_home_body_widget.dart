@@ -40,8 +40,7 @@ class MidHomeBodyWidget extends StatelessWidget {
               onPressed: categoriesBtnAction,
               child: Padding(
                 padding: const EdgeInsets.symmetric(
-                    vertical: AppSizes.paddingLSlim,
-                    horizontal: AppSizes.paddingXXLSlim),
+                    vertical: AppSizes.paddingL, horizontal: AppSizes.paddingL),
                 child: Text(
                   HomeStrings.categories.i18n,
                   style: const TextStyle(
@@ -54,8 +53,7 @@ class MidHomeBodyWidget extends StatelessWidget {
             onPressed: recentBtnAction,
             child: Padding(
               padding: const EdgeInsets.symmetric(
-                  vertical: AppSizes.paddingLSlim,
-                  horizontal: AppSizes.paddingLSlim),
+                  vertical: AppSizes.paddingL, horizontal: AppSizes.paddingL),
               child: Text(
                 HomeStrings.recentTransaction.i18n,
                 style: const TextStyle(

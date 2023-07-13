@@ -26,7 +26,7 @@ class TopHomeBodyWidget extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Container(
-            margin: const EdgeInsets.only(top: 56),
+            margin: const EdgeInsets.only(top: AppSizes.marginL),
             child: Text(
               HomeStrings.budget.i18n,
               style: Theme.of(context).textTheme.displaySmall,
@@ -38,7 +38,7 @@ class TopHomeBodyWidget extends StatelessWidget {
                 top: AppSizes.paddingM, right: AppSizes.paddingS),
             amountStyle: Theme.of(context).textTheme.displayLarge!,
             amountStyleSmall: const TextStyle(
-                fontSize: 16,
+                fontSize: 15,
                 fontWeight: FontWeight.bold,
                 color: AppColors.brandLightColor),
           ),

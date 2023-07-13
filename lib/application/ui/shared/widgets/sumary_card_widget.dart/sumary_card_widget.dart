@@ -28,7 +28,6 @@ class SumaryCardWidget extends StatelessWidget {
     var spendingIcon =
         const Icon(Icons.arrow_downward, color: AppColors.brandOnErrorColor);
     return Container(
-      height: AppSizes.heightXL,
       margin: const EdgeInsets.only(top: AppSizes.marginM),
       padding: const EdgeInsets.all(AppSizes.paddingL),
       decoration: const BoxDecoration(
