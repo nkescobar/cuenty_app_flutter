@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:i18n_extension/i18n_widget.dart';
 import 'package:cuenty_app/application/app/config/index.dart' show AppRoutes;
 import 'package:cuenty_app/application/ui/screens/index.dart'
-    show HomeScreen, NewScreen, OtherScreen;
+    show HomeScreen, NewScreen, OtherScreen, LoginScreen;
 import 'package:cuenty_app/domain/index.dart' show User;
 
 class AppRouter {
@@ -10,7 +10,7 @@ class AppRouter {
     switch (settings.name) {
       case AppRoutes.initialRoute:
         return MaterialPageRoute(
-          builder: (_) => I18n(child: const HomeScreen()),
+          builder: (_) => I18n(child: const LoginScreen()),
         );
       case AppRoutes.homeRoute:
         return MaterialPageRoute(

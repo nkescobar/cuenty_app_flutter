@@ -8,8 +8,15 @@ class LoginFormWidget extends StatefulWidget {
 }
 
 class _LoginFormWidgetState extends State<LoginFormWidget> {
+  final _formLoginKey = GlobalKey<FormState>();
+
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Center(
+      child: Form(
+        key: _formLoginKey,
+        child: const Column(),
+      ),
+    );
   }
 }
