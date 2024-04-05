@@ -1,3 +1,4 @@
+import 'package:cuenty_app/utils/index.dart';
 import 'package:flutter/material.dart';
 // Design
 import 'package:cuenty_app/application/app/design/index.dart'
@@ -24,7 +25,7 @@ class HomeAppBarTitleWidget extends StatelessWidget {
         ),
         Expanded(
           child: Text(
-            'Store Name',
+            MySingletonSharedPreferencesImpl().userName as String,
             style: Theme.of(context).textTheme.headlineLarge,
           ),
         ),

@@ -17,6 +17,7 @@ class _LoginFormWidgetState extends State<LoginFormWidget> {
   final _formLoginKey = GlobalKey<FormState>();
 
   var userInputController = TextEditingController();
+  var checkBoxState = false;
 
   late String userName;
 
@@ -29,6 +30,10 @@ class _LoginFormWidgetState extends State<LoginFormWidget> {
       fontSize: 13,
       color: AppColors.brandLigthDarkColor,
       fontWeight: FontWeight.normal);
+  final activeContainerInputDecoration = BoxDecoration(
+      color: AppColors.brandSecondaryColor,
+      border: Border.all(color: AppColors.brandPrimaryColor, width: 2),
+      borderRadius: const BorderRadius.all(AppRadius.small));
 
   final defaultContainerInputDecoration = const BoxDecoration(
       color: AppColors.brandSecondaryColor,
@@ -67,6 +72,20 @@ class _LoginFormWidgetState extends State<LoginFormWidget> {
                   }
                   return null;
                 }),
+                onTap: () {
+                  setState(() {
+                    userContainerDecoration = activeContainerInputDecoration;
+                    pswContainerDecoration = defaultContainerInputDecoration;
+                  });
+                },
+                onTapOutside: (event) {
+                  setState(() {
+                    userContainerDecoration = defaultContainerInputDecoration;
+                  });
+                },
+                onSaved: (userNameValue) {
+                  userName = userNameValue!;
+                },
                 decoration: InputDecoration(
                   border: defaultInputBorder,
                   label: Text(LoginStrings.userInputLabel.i18n,
@@ -86,6 +105,17 @@ class _LoginFormWidgetState extends State<LoginFormWidget> {
                   }
                   return null;
                 },
+                onTap: () {
+                  setState(() {
+                    pswContainerDecoration = activeContainerInputDecoration;
+                    userContainerDecoration = defaultContainerInputDecoration;
+                  });
+                },
+                onTapOutside: (event) {
+                  setState(() {
+                    pswContainerDecoration = defaultContainerInputDecoration;
+                  });
+                },
                 obscureText: true,
                 obscuringCharacter: '*',
                 decoration: InputDecoration(
@@ -93,6 +123,30 @@ class _LoginFormWidgetState extends State<LoginFormWidget> {
                     label: Text(LoginStrings.userPswInputLabel.i18n),
                     labelStyle: defaultInputLabelTheme),
               ),
+            ),
+            Row(
+              children: [
+                Checkbox(
+                  shape: const RoundedRectangleBorder(
+                      borderRadius: BorderRadius.all(Radius.circular(4))),
+                  value: checkBoxState,
+                  onChanged: (value) {
+                    setState(() {
+                      checkBoxState = !checkBoxState;
+                    });
+                  },
+                  checkColor: AppColors.brandLightColor,
+                  activeColor: AppColors.brandPrimaryColor,
+                ),
+                const Expanded(child: Text(LoginStrings.rememberMe)),
+                TextButton(
+                  onPressed: () {},
+                  child: Text(
+                    LoginStrings.recoveryPassword,
+                    style: defaultInputLabelTheme,
+                  ),
+                )
+              ],
             ),
             Container(
               margin: const EdgeInsets.only(top: 32, bottom: 48),
