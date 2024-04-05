@@ -12,7 +12,9 @@ import 'package:cuenty_app/application/ui/screens/home/widgets/index.dart'
         TopHomeBodyWidget;
 
 class HomeScreen extends StatefulWidget {
-  const HomeScreen({super.key});
+  final String userName;
+
+  const HomeScreen({super.key, required this.userName});
 
   @override
   State<HomeScreen> createState() => _HomeScreenState();

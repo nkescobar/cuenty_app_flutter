@@ -14,7 +14,10 @@ class AppRouter {
         );
       case AppRoutes.homeRoute:
         return MaterialPageRoute(
-          builder: (_) => I18n(child: const HomeScreen()),
+          builder: (_) => I18n(
+              child: HomeScreen(
+            userName: settings.arguments as String,
+          )),
         );
       case AppRoutes.newScreenRoute:
         return MaterialPageRoute(
@@ -27,7 +30,7 @@ class AppRouter {
         );
       default:
         return MaterialPageRoute(
-          builder: (_) => I18n(child: const HomeScreen()),
+          builder: (_) => I18n(child: const LoginScreen()),
         );
     }
   }

@@ -14,25 +14,27 @@ class _LoginScreenState extends State<LoginScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
-        child: Padding(
-          padding:
-              const EdgeInsets.symmetric(horizontal: 16.0, vertical: 100.0),
-          child: Column(children: [
-            Text(
-              LoginStrings.hello.i18n,
-              style: Theme.of(context).textTheme.labelLarge,
-            ),
-            Container(
-              margin: const EdgeInsets.fromLTRB(16, 21, 16, 59),
-              child: Text(
-                LoginStrings.description.i18n,
-                style: Theme.of(context).textTheme.labelMedium,
-                textAlign: TextAlign.center,
+      body: SingleChildScrollView(
+        child: Center(
+          child: Padding(
+            padding:
+                const EdgeInsets.symmetric(horizontal: 16.0, vertical: 100.0),
+            child: Column(children: [
+              Text(
+                LoginStrings.hello.i18n,
+                style: Theme.of(context).textTheme.labelLarge,
               ),
-            ),
-            const LoginFormWidget()
-          ]),
+              Container(
+                margin: const EdgeInsets.fromLTRB(16, 21, 16, 59),
+                child: Text(
+                  LoginStrings.description.i18n,
+                  style: Theme.of(context).textTheme.labelMedium,
+                  textAlign: TextAlign.center,
+                ),
+              ),
+              const LoginFormWidget()
+            ]),
+          ),
         ),
       ),
     );
