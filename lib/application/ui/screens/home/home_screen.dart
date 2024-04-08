@@ -51,8 +51,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 bottomLeft: AppRadius.small, bottomRight: AppRadius.small)),
         backgroundColor: AppColors.brandLightColor,
         title: const Padding(
-          padding: EdgeInsets.fromLTRB(AppSizes.paddingLSlim,
-              AppSizes.paddingXXL, AppSizes.paddingLSlim, AppSizes.paddingL),
+          padding: EdgeInsets.zero,
           child: HomeAppBarTitleWidget(),
         ),
       ),

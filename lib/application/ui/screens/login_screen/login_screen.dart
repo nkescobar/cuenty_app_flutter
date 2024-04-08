@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:cuenty_app/application/app/config/index.dart' show AppRoutes;
 import 'package:cuenty_app/application/app/design/index.dart'
     show AppColors, AppRadius;
 import 'package:cuenty_app/application/ui/screens/login_screen/index.dart'
@@ -114,21 +115,26 @@ class _LoginScreenState extends State<LoginScreen> {
                 ],
               ),
               const SizedBox(
-                height: 80,
+                height: 15,
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   const Text(LoginStrings.notAMember),
                   TextButton(
-                      onPressed: () {},
-                      child: const Text(
-                        LoginStrings.registerNow,
-                        style: TextStyle(
-                            color: AppColors.brandPrimaryColor, fontSize: 13),
-                      ))
+                    onPressed: () {
+                      print('register');
+                      Navigator.of(context)
+                          .pushNamed(AppRoutes.signInScreenRoute);
+                    },
+                    child: const Text(
+                      LoginStrings.registerNow,
+                      style: TextStyle(
+                          color: AppColors.brandPrimaryColor, fontSize: 13),
+                    ),
+                  )
                 ],
-              )
+              ),
             ]),
           ),
         ),

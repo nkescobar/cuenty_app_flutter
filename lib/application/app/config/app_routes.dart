@@ -4,4 +4,5 @@ class AppRoutes {
   static const String homeRoute = 'home';
   static const String newScreenRoute = 'new-screen';
   static const String otherScreenRoute = 'other-screen';
+  static const String signInScreenRoute = 'sign-in-screen';
 }

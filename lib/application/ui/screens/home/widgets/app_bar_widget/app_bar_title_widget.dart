@@ -13,6 +13,7 @@ class HomeAppBarTitleWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Row(
+      crossAxisAlignment: CrossAxisAlignment.end,
       children: [
         Container(
           width: AppSizes.widthL,
