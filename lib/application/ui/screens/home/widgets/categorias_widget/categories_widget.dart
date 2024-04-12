@@ -19,6 +19,7 @@ class CategoriesWidget extends StatelessWidget {
             HomeStrings.viewAll.i18n,
             style: const TextStyle(
                 fontWeight: FontWeight.bold,
+                fontSize: 13.0,
                 color: Color.fromRGBO(53, 97, 254, 1)),
           ),
           onPressed: () {

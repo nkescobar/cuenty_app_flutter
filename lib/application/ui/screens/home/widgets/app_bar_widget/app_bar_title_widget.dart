@@ -1,4 +1,4 @@
-import 'package:cuenty_app/utils/index.dart';
+import 'package:cuenty_app/core/utils/index.dart';
 import 'package:flutter/material.dart';
 // Design
 import 'package:cuenty_app/application/app/design/index.dart'

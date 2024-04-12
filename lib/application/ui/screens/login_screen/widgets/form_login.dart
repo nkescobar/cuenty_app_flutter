@@ -3,7 +3,7 @@ import 'package:cuenty_app/application/ui/screens/login_screen/index.dart';
 import 'package:cuenty_app/application/app/design/index.dart'
     show AppColors, AppRadius;
 import 'package:cuenty_app/application/app/config/app_routes.dart';
-import 'package:cuenty_app/utils/index.dart'
+import 'package:cuenty_app/core/utils/index.dart'
     show MySingletonSharedPreferencesImpl;
 
 class LoginFormWidget extends StatefulWidget {
@@ -17,6 +17,8 @@ class _LoginFormWidgetState extends State<LoginFormWidget> {
   final _formLoginKey = GlobalKey<FormState>();
 
   var userInputController = TextEditingController();
+  final _userFocusNode = FocusNode();
+  final _passwordFocusNode = FocusNode();
   var checkBoxState = false;
 
   late String userName;
@@ -58,6 +60,7 @@ class _LoginFormWidgetState extends State<LoginFormWidget> {
               decoration: userContainerDecoration,
               child: TextFormField(
                 controller: userInputController,
+                focusNode: _userFocusNode,
                 style: Theme.of(context).textTheme.labelSmall,
                 validator: ((value) {
                   print('holaa-----> $value');
@@ -86,6 +89,15 @@ class _LoginFormWidgetState extends State<LoginFormWidget> {
                 onSaved: (userNameValue) {
                   userName = userNameValue!;
                 },
+                textInputAction: TextInputAction.next,
+                onFieldSubmitted: (text) {
+                  setState(() {
+                    userContainerDecoration = defaultContainerInputDecoration;
+                    pswContainerDecoration =
+                        activeContainerInputDecoration; // Update decoration here
+                  });
+                  FocusScope.of(context).requestFocus(_passwordFocusNode);
+                },
                 decoration: InputDecoration(
                   border: defaultInputBorder,
                   label: Text(LoginStrings.userInputLabel.i18n,
@@ -99,6 +111,7 @@ class _LoginFormWidgetState extends State<LoginFormWidget> {
               margin: const EdgeInsets.symmetric(vertical: 24),
               decoration: pswContainerDecoration,
               child: TextFormField(
+                focusNode: _passwordFocusNode,
                 validator: (value) {
                   if (value == null || value.isEmpty) {
                     return LoginErrors.userPsw.i18n;

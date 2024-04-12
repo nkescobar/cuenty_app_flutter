@@ -1,7 +1,7 @@
 import 'package:cuenty_app/application/app/config/app_routes.dart';
 import 'package:cuenty_app/application/app/design/index.dart';
 import 'package:cuenty_app/application/ui/screens/sign_in_screen/i18n/sign_in_.i18n.dart';
-import 'package:cuenty_app/utils/singleton_shared_prefences/singleton_shared_prefences.dart';
+import 'package:cuenty_app/core/utils/singleton_shared_prefences/singleton_shared_prefences.dart';
 import 'package:flutter/material.dart';
 
 class SignInFormWidget extends StatefulWidget {

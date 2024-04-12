@@ -1,0 +1,1 @@
+enum TypeTransaction { positive, negative }

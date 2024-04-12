@@ -5,4 +5,5 @@ class AppRoutes {
   static const String newScreenRoute = 'new-screen';
   static const String otherScreenRoute = 'other-screen';
   static const String signInScreenRoute = 'sign-in-screen';
+  static const String allTransactionScreenRoute = 'all-transaction-screen';
 }
