@@ -6,9 +6,10 @@ class TransactionDetailByDay {
   final int dayNumber;
   final bool isToday;
   final List<TransactionDetail> listofTransactions;
-  TransactionDetailByDay(
-      {required this.day,
-      required this.dayNumber,
-      required this.isToday,
-      required this.listofTransactions});
+  TransactionDetailByDay({
+    required this.day,
+    required this.dayNumber,
+    required this.isToday,
+    required this.listofTransactions,
+  });
 }

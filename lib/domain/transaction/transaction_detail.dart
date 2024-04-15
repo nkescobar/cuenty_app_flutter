@@ -5,9 +5,10 @@ class TransactionDetail {
   final String transactionDate;
   final TypeTransaction typeTransaction;
   final double amount;
-  TransactionDetail(
-      {required this.movementName,
-      required this.transactionDate,
-      required this.typeTransaction,
-      required this.amount});
+  TransactionDetail({
+    required this.movementName,
+    required this.transactionDate,
+    required this.typeTransaction,
+    required this.amount,
+  });
 }
