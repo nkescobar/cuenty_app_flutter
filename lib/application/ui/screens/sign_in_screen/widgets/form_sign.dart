@@ -1,8 +1,11 @@
-import 'package:cuenty_app/application/app/config/app_routes.dart';
-import 'package:cuenty_app/application/app/design/index.dart';
+import 'package:flutter/material.dart';
+import 'package:cuenty_app/application/app/config/index.dart' show AppRoutes;
+import 'package:cuenty_app/application/app/design/index.dart'
+    show AppColors, AppRadius;
+import 'package:cuenty_app/application/ui/providers/index.dart'
+    show UserProvider;
 import 'package:cuenty_app/application/ui/screens/sign_in_screen/i18n/sign_in_.i18n.dart';
 import 'package:cuenty_app/core/utils/singleton_shared_prefences/singleton_shared_prefences.dart';
-import 'package:flutter/material.dart';
 
 class SignInFormWidget extends StatefulWidget {
   const SignInFormWidget({super.key});
@@ -216,7 +219,9 @@ class _SignInFormWidgetState extends State<SignInFormWidget> {
                     // _formLoginKey.currentState!.save();
                     userName = userInputController.text;
                     MySingletonSharedPreferencesImpl().userName = userName;
-                    print(
+                    UserProvider.of(context)?.userData.name = userName;
+
+                    debugPrint(
                         'usermane singleron ${MySingletonSharedPreferencesImpl().userName}');
                     Navigator.of(context).pushReplacementNamed(
                         AppRoutes.homeRoute,

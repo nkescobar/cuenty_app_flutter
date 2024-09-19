@@ -20,7 +20,7 @@ class MySingletonSharedPreferencesImpl implements MySingletonSharedPreferences {
     return _singleton;
   }
 
-  MySingletonSharedPreferencesImpl._internal() {}
+  MySingletonSharedPreferencesImpl._internal();
   @override
   String? paginaActual;
 

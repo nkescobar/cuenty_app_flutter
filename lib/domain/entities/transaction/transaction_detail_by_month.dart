@@ -1,4 +1,4 @@
-import 'package:cuenty_app/domain/transaction/index.dart'
+import 'package:cuenty_app/domain/entities/transaction/index.dart'
     show TransactionDetailByDay;
 
 class TransactionDetailByMonth {

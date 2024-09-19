@@ -61,24 +61,24 @@ class _LoginScreenState extends State<LoginScreen> {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Container(
-                    width: 170,
+                    width: 189,
                     height: 69,
                     decoration: const BoxDecoration(
                         color: AppColors.brandSecondaryColor,
                         borderRadius: BorderRadius.all(AppRadius.small)),
-                    child: Row(
+                    child: const Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        const Image(
+                        Image(
                           image: AssetImage('assets/images/google.png'),
                           width: 30,
                         ),
-                        const SizedBox(
+                        SizedBox(
                           width: 12,
                         ),
                         Text(
-                          LoginStrings.google.i18n,
-                          style: const TextStyle(
+                          LoginStrings.google,
+                          style: TextStyle(
                               fontSize: 13,
                               fontWeight: FontWeight.bold,
                               color: AppColors.brandLigthDarkColor),
@@ -111,7 +111,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         )
                       ],
                     ),
-                  ),
+                  )
                 ],
               ),
               const SizedBox(

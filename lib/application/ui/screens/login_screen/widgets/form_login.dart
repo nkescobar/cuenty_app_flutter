@@ -1,3 +1,4 @@
+import 'package:cuenty_app/application/ui/providers/index.dart';
 import 'package:flutter/material.dart';
 import 'package:cuenty_app/application/ui/screens/login_screen/index.dart';
 import 'package:cuenty_app/application/app/design/index.dart'
@@ -173,11 +174,12 @@ class _LoginFormWidgetState extends State<LoginFormWidget> {
                 child: Text(LoginStrings.logIn.i18n),
                 onPressed: () {
                   if (_formLoginKey.currentState!.validate()) {
-                    print('Todos lo campos estan ok 🤯');
+                    debugPrint('Todos lo campos estan ok 🤯');
                     // _formLoginKey.currentState!.save();
                     userName = userInputController.text;
                     MySingletonSharedPreferencesImpl().userName = userName;
-                    print(
+                    UserProvider.of(context)?.userData.name = userName;
+                    debugPrint(
                         'usermane singleron ${MySingletonSharedPreferencesImpl().userName}');
                     Navigator.of(context).pushReplacementNamed(
                         AppRoutes.homeRoute,

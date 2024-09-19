@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:cuenty_app/core/utils/index.dart'
+    show MySingletonSharedPreferencesImpl;
 import 'package:cuenty_app/domain/entities/index.dart' show User;
 
 class OtherScreen extends StatefulWidget {
@@ -14,12 +16,12 @@ class _OtherScreenState extends State<OtherScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Other Page'),
+        title: Text(
+            'Other page ${MySingletonSharedPreferencesImpl().userName as String}'),
       ),
       body: Center(
         child: TextButton(
-          child: Text(
-              'hola ${widget.userData.name} ustedes en promedio tienen ${widget.userData.age} '),
+          child: Text('hola ${widget.userData.name}'),
           onPressed: () => Navigator.of(context).pop(),
         ),
       ),

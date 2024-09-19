@@ -1,5 +1,5 @@
-import 'package:cuenty_app/core/utils/index.dart';
 import 'package:flutter/material.dart';
+import 'package:cuenty_app/application/ui/providers/user/index.dart';
 // Design
 import 'package:cuenty_app/application/app/design/index.dart'
     show AppColors, AppSizes;
@@ -26,7 +26,8 @@ class HomeAppBarTitleWidget extends StatelessWidget {
         ),
         Expanded(
           child: Text(
-            MySingletonSharedPreferencesImpl().userName as String,
+            UserProvider.of(context)!.userData.name,
+            //  MySingletonSharedPreferencesImpl().userName as String,
             style: Theme.of(context).textTheme.headlineLarge,
           ),
         ),
