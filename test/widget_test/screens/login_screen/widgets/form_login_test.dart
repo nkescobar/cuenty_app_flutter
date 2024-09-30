@@ -31,13 +31,18 @@ void main() {
         (WidgetTester tester) async {
       await pumpLoginFormWidget(tester);
 
+      var expectErrorPass = LoginErrors.userPsw.i18n;
+      const userName = 'user_test';
+      const inputNameKey = Key('input-name');
+      final findedBtn = find.byType(ElevatedButton);
+
       // Llenar el campo de nombre de usuario pero no el de contraseña
-      await tester.enterText(find.byKey(const Key('input-name')), 'user_test');
-      await tester.tap(find.byType(ElevatedButton));
+      await tester.enterText(find.byKey(inputNameKey), userName);
+      await tester.tap(findedBtn);
       await tester.pump();
 
       // Verifica que se muestre un mensaje de error para la contraseña
-      expect(find.text(LoginErrors.userPsw.i18n), findsOneWidget);
+      expect(find.text(expectErrorPass), findsOneWidget);
     });
 
     testWidgets('Should navigate to home page on successful login',
@@ -65,6 +70,10 @@ void main() {
 
       // Verifica que el usuario haya sido guardado en SharedPreferences
       expect(mockSharedPrefs.userName, 'user_test');
+
+      expect(find.text(LoginErrors.userError), findsNothing);
+      expect(find.text(LoginErrors.userErrorLen), findsNothing);
+      expect(find.text(LoginErrors.userPsw), findsNothing);
 
       // Verifica que se navegue a la pantalla de inicio
       expect(find.text('Home Screen'), findsOneWidget);
