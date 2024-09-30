@@ -4,12 +4,9 @@ import 'package:cuenty_app/domain/index.dart' show User;
 class UserProvider extends InheritedWidget {
   final User userData;
 
-  @override
-  final Widget child;
-
   const UserProvider({
     super.key,
-    required this.child,
+    required Widget child,
     required this.userData,
   }) : super(child: child);
 

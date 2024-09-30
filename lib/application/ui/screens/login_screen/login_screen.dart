@@ -139,7 +139,6 @@ class _LoginScreenState extends State<LoginScreen> {
                   const Text(LoginStrings.notAMember),
                   TextButton(
                     onPressed: () {
-                      print('register');
                       Navigator.of(context)
                           .pushNamed(AppRoutes.signInScreenRoute);
                     },

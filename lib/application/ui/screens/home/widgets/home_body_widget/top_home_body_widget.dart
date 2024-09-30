@@ -1,3 +1,5 @@
+// ignore_for_file: avoid_print
+
 import 'package:flutter/material.dart';
 // Shared Widgets
 import 'package:cuenty_app/application/ui/shared/widgets/index.dart'

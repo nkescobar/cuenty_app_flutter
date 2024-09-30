@@ -85,12 +85,10 @@ class _AllTransactionScreenState extends State<AllTransactionScreen> {
           Expanded(
               child: ListView.separated(
                   itemBuilder: (context, month) {
-                    print('vamos en el mes $month');
                     return ListView.separated(
                         shrinkWrap: true,
                         physics: const NeverScrollableScrollPhysics(),
                         itemBuilder: (context, day) {
-                          print('vamos en el dia $day');
                           var currentday = TransactionsMocks
                               .transactionDetailByMonth[month]
                               .listofTransactions[day];

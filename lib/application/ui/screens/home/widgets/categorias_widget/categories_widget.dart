@@ -23,7 +23,6 @@ class CategoriesWidget extends StatelessWidget {
                 color: Color.fromRGBO(53, 97, 254, 1)),
           ),
           onPressed: () {
-            print('le diste clic a view all');
             Navigator.of(context).pushNamed(AppRoutes.newScreenRoute);
           },
         ),

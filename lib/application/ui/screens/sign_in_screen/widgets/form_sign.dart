@@ -1,3 +1,6 @@
+// ignore_for_file: avoid_print
+
+import 'package:cuenty_app/application/ui/shared/helpers/index.dart';
 import 'package:flutter/material.dart';
 import 'package:cuenty_app/application/app/config/index.dart' show AppRoutes;
 import 'package:cuenty_app/application/app/design/index.dart'
@@ -66,19 +69,7 @@ class _SignInFormWidgetState extends State<SignInFormWidget> {
               child: TextFormField(
                 controller: userInputController,
                 style: Theme.of(context).textTheme.labelSmall,
-                validator: ((value) {
-                  print('holaa-----> $value');
-                  print('holaa-----> ${value?.length}');
-
-                  if (value == null || value.isEmpty) {
-                    return SignInErrors.userError.i18n;
-                  }
-
-                  if (value.length >= 10) {
-                    return SignInErrors.userErrorLen.i18n;
-                  }
-                  return null;
-                }),
+                validator: (value) => validateInput(value),
                 onTap: () {
                   setState(() {
                     userContainerDecoration = activeContainerInputDecoration;

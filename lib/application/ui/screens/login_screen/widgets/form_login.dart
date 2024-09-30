@@ -1,9 +1,12 @@
-import 'package:cuenty_app/application/ui/providers/index.dart';
 import 'package:flutter/material.dart';
+import 'package:cuenty_app/application/ui/providers/index.dart'
+    show UserProvider;
+import 'package:cuenty_app/application/app/config/index.dart' show AppRoutes;
+import 'package:cuenty_app/application/ui/shared/helpers/index.dart'
+    show validateInput;
 import 'package:cuenty_app/application/ui/screens/login_screen/index.dart';
 import 'package:cuenty_app/application/app/design/index.dart'
     show AppColors, AppRadius;
-import 'package:cuenty_app/application/app/config/app_routes.dart';
 import 'package:cuenty_app/core/utils/index.dart'
     show MySingletonSharedPreferencesImpl;
 
@@ -49,6 +52,14 @@ class _LoginFormWidgetState extends State<LoginFormWidget> {
   }
 
   @override
+  void dispose() {
+    userInputController.dispose();
+    _userFocusNode.dispose();
+    _passwordFocusNode.dispose();
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Center(
       child: Form(
@@ -60,22 +71,11 @@ class _LoginFormWidgetState extends State<LoginFormWidget> {
               padding: const EdgeInsets.only(left: 24, bottom: 4),
               decoration: userContainerDecoration,
               child: TextFormField(
+                key: const Key('input-name'),
                 controller: userInputController,
                 focusNode: _userFocusNode,
                 style: Theme.of(context).textTheme.labelSmall,
-                validator: ((value) {
-                  print('holaa-----> $value');
-                  print('holaa-----> ${value?.length}');
-
-                  if (value == null || value.isEmpty) {
-                    return LoginErrors.userError.i18n;
-                  }
-
-                  if (value.length >= 10) {
-                    return LoginErrors.userErrorLen.i18n;
-                  }
-                  return null;
-                }),
+                validator: (value) => validateInput(value),
                 onTap: () {
                   setState(() {
                     userContainerDecoration = activeContainerInputDecoration;
@@ -112,6 +112,7 @@ class _LoginFormWidgetState extends State<LoginFormWidget> {
               margin: const EdgeInsets.symmetric(vertical: 24),
               decoration: pswContainerDecoration,
               child: TextFormField(
+                key: const Key('password-name'),
                 focusNode: _passwordFocusNode,
                 validator: (value) {
                   if (value == null || value.isEmpty) {

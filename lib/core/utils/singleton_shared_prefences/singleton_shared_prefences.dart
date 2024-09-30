@@ -1,14 +1,11 @@
 abstract class MySingletonSharedPreferences {
-  String? get token => token;
-
+  String? get token;
   set token(String? token);
 
-  String? get paginaActual => paginaActual;
-
+  String? get paginaActual;
   set paginaActual(String? paginaActual);
 
-  String? get userName => userName;
-
+  String? get userName;
   set userName(String? userName);
 }
 

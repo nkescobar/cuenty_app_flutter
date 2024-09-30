@@ -58,7 +58,6 @@ class TransactionDetailByDayWidget extends StatelessWidget {
               shrinkWrap: true,
               physics: const NeverScrollableScrollPhysics(),
               itemBuilder: (context, indice) {
-                print('vamos en la transaccion $indice');
                 return listofTransactions[indice].typeTransaction ==
                         TypeTransaction.positive
                     ? TransactionDetailPositiveWidget(
