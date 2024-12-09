@@ -1,19 +1,21 @@
 import 'package:i18n_extension/i18n_extension.dart';
 
-class SumaryStrings {
+class SummaryStrings {
   static const String incomes = 'Incomes';
   static const String spending = 'Spending';
 }
 
 extension Localization on String {
-  static final _t = Translations('en_us') +
+  static final _t = Translations.byLocale('en_us') +
       {
-        'en_us': SumaryStrings.incomes,
-        'es_co': 'Ingresos',
-      } +
-      {
-        'en_us': SumaryStrings.spending,
-        'es_co': 'Gastos',
+        'en_us': {
+          'incomes': SummaryStrings.incomes,
+          'spending': SummaryStrings.spending,
+        },
+        'es_co': {
+          'incomes': 'Ingresos',
+          'spending': 'Gastos',
+        },
       };
 
   String get i18n => localize(this, _t);

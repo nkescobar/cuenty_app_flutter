@@ -6,9 +6,9 @@ class UserProvider extends InheritedWidget {
 
   const UserProvider({
     super.key,
-    required Widget child,
+    required super.child,
     required this.userData,
-  }) : super(child: child);
+  });
 
   // OBtener la informacion solo utilizando el contexto
   static UserProvider? of(BuildContext context) {

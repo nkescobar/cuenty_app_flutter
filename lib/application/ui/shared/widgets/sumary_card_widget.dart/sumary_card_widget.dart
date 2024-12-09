@@ -5,7 +5,7 @@ import 'package:cuenty_app/application/app/design/index.dart'
     show AppColors, AppRadius, AppSizes;
 // Enum
 import 'package:cuenty_app/application/ui/shared/widgets/index.dart'
-    show Localization, SumaryStrings, TypeSummaryCardEnum;
+    show Localization, SummaryStrings, TypeSummaryCardEnum;
 
 class SumaryCardWidget extends StatelessWidget {
   final TypeSummaryCardEnum typeSummaryCard;
@@ -53,8 +53,8 @@ class SumaryCardWidget extends StatelessWidget {
           Expanded(
             child: Text(
               typeSummaryCard == TypeSummaryCardEnum.incomes
-                  ? SumaryStrings.incomes.i18n
-                  : SumaryStrings.spending.i18n,
+                  ? SummaryStrings.incomes.i18n
+                  : SummaryStrings.spending.i18n,
               style: Theme.of(context).textTheme.displaySmall,
             ),
           ),

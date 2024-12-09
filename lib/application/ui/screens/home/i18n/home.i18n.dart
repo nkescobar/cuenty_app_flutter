@@ -10,30 +10,24 @@ class HomeStrings {
 }
 
 extension Localization on String {
-  static final _t = Translations('en_us') +
+  static final _t = Translations.byLocale('en_us') +
       {
-        'en_us': HomeStrings.home,
-        'es_co': 'Inicio!',
-      } +
-      {
-        'en_us': HomeStrings.welcome,
-        'es_co': 'Bienvenido',
-      } +
-      {
-        'en_us': HomeStrings.budget,
-        'es_co': 'Tu presupuesto',
-      } +
-      {
-        'en_us': HomeStrings.categories,
-        'es_co': 'Categorias',
-      } +
-      {
-        'en_us': HomeStrings.recentTransaction,
-        'es_co': 'Transacciones recientes',
-      } +
-      {
-        'en_us': HomeStrings.viewAll,
-        'es_co': 'Ver todo',
+        'en_us': {
+          'home': HomeStrings.home,
+          'welcome': HomeStrings.welcome,
+          'budget': HomeStrings.budget,
+          'categories': HomeStrings.categories,
+          'recentTransaction': HomeStrings.recentTransaction,
+          'viewAll': HomeStrings.viewAll,
+        },
+        'es_co': {
+          'home': 'Inicio!',
+          'welcome': 'Bienvenido',
+          'budget': 'Tu presupuesto',
+          'categories': 'Categorías',
+          'recentTransaction': 'Transacciones recientes',
+          'viewAll': 'Ver todo',
+        },
       };
 
   String get i18n => localize(this, _t);

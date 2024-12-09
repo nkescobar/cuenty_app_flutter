@@ -31,7 +31,7 @@ class SignInErrors {
 }
 
 extension Localization on String {
-  static final _t = Translations('en_us') +
+  static final _t = Translations.byLocale('en_us') +
       {
         'en_us': SignInStrings.signIn,
         'es_co': 'Registrarse!',

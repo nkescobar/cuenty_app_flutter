@@ -24,54 +24,36 @@ class LoginErrors {
 }
 
 extension Localization on String {
-  static final _t = Translations('en_us') +
+  static final _t = Translations.byLocale('en_us') +
       {
-        'en_us': LoginStrings.hello,
-        'es_co': 'Inicio!',
-      } +
-      {
-        'en_us': LoginStrings.userInputLabel,
-        'es_co': 'Usuario',
-      } +
-      {
-        'en_us': LoginStrings.userPswInputLabel,
-        'es_co': 'Contraseña',
-      } +
-      {
-        'en_us': LoginStrings.rememberMe,
-        'es_co': 'Recuerdame',
-      } +
-      {
-        'en_us': LoginStrings.recoveryPassword,
-        'es_co': 'Recordar contraseña',
-      } +
-      {
-        'en_us': LoginStrings.orContinue,
-        'es_co': 'O continue con',
-      } +
-      {
-        'en_us': LoginStrings.logIn,
-        'es_co': 'Inicio sesión',
-      } +
-      {
-        'en_us': LoginStrings.notAMember,
-        'es_co': '¿No estas registrado?',
-      } +
-      {
-        'en_us': LoginStrings.registerNow,
-        'es_co': 'Registrate ahora',
-      } +
-      {
-        'en_us': LoginErrors.userError,
-        'es_co': 'Ingrese un usuario',
-      } +
-      {
-        'en_us': LoginErrors.userErrorLen,
-        'es_co': 'Ingrese un usuario válido',
-      } +
-      {
-        'en_us': LoginErrors.userPsw,
-        'es_co': 'Verifique su contraseña',
+        'en_us': {
+          'hello': LoginStrings.hello,
+          'userInputLabel': LoginStrings.userInputLabel,
+          'userPswInputLabel': LoginStrings.userPswInputLabel,
+          'rememberMe': LoginStrings.rememberMe,
+          'recoveryPassword': LoginStrings.recoveryPassword,
+          'orContinue': LoginStrings.orContinue,
+          'logIn': LoginStrings.logIn,
+          'notAMember': LoginStrings.notAMember,
+          'registerNow': LoginStrings.registerNow,
+          'userError': LoginErrors.userError,
+          'userErrorLen': LoginErrors.userErrorLen,
+          'userPsw': LoginErrors.userPsw,
+        },
+        'es_co': {
+          'hello': 'Inicio!',
+          'userInputLabel': 'Usuario',
+          'userPswInputLabel': 'Contraseña',
+          'rememberMe': 'Recuérdame',
+          'recoveryPassword': 'Recordar contraseña',
+          'orContinue': 'O continúa con',
+          'logIn': 'Iniciar sesión',
+          'notAMember': '¿No estás registrado?',
+          'registerNow': 'Regístrate ahora',
+          'userError': 'Ingrese un usuario',
+          'userErrorLen': 'Ingrese un usuario válido',
+          'userPsw': 'Verifique su contraseña',
+        },
       };
 
   String get i18n => localize(this, _t);

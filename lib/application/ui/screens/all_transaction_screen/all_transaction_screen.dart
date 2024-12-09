@@ -43,7 +43,7 @@ class _AllTransactionScreenState extends State<AllTransactionScreen> {
           title: Padding(
             padding: const EdgeInsets.fromLTRB(0, 45, 16, 12),
             child: Text(
-              AllTransactionStrings.recenTrx,
+              AllTransactionStrings.recentTrx,
               style: Theme.of(context).textTheme.headlineLarge,
             ),
           ),

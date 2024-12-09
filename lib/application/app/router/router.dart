@@ -1,6 +1,6 @@
 import 'package:cuenty_app/application/ui/screens/all_transaction_screen/all_transaction_screen.dart';
 import 'package:flutter/material.dart';
-import 'package:i18n_extension/i18n_widget.dart';
+import 'package:i18n_extension/i18n_extension.dart';
 import 'package:cuenty_app/application/app/config/index.dart' show AppRoutes;
 import 'package:cuenty_app/application/ui/screens/index.dart'
     show HomeScreen, LoginScreen, NewScreen, OtherScreen, SignInScreen;

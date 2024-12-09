@@ -1,14 +1,18 @@
 import 'package:i18n_extension/i18n_extension.dart';
 
 class AllTransactionStrings {
-  static const String recenTrx = 'Recent transactions';
+  static const String recentTrx = 'Recent transactions';
 }
 
 extension Localization on String {
-  static final _t = Translations('en_us') +
+  static final _t = Translations.byLocale('en_us') +
       {
-        'en_us': AllTransactionStrings.recenTrx,
-        'es_co': 'Transaciones recientes',
+        'en_us': {
+          'recentTrx': AllTransactionStrings.recentTrx,
+        },
+        'es_co': {
+          'recentTrx': 'Transacciones recientes',
+        },
       };
 
   String get i18n => localize(this, _t);
