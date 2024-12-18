@@ -33,7 +33,7 @@ class _CuentyAppState extends State<CuentyApp> {
         debugShowCheckedModeBanner: false,
         theme: AppThemes.defaultTheme,
         onGenerateRoute: AppRouter.generateRoute,
-        initialRoute: AppRoutes.initialRoute,
+        initialRoute: AppRoutes.responsiveRoute,
       ),
     );
   }

@@ -1,4 +1,5 @@
 import 'package:cuenty_app/application/ui/screens/all_transaction_screen/all_transaction_screen.dart';
+import 'package:cuenty_app/application/ui/screens/responsive_screen/responsive_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:i18n_extension/i18n_extension.dart';
 import 'package:cuenty_app/application/app/config/index.dart' show AppRoutes;
@@ -36,6 +37,10 @@ class AppRouter {
       case AppRoutes.allTransactionScreenRoute:
         return MaterialPageRoute(
           builder: (_) => I18n(child: const AllTransactionScreen()),
+        );
+      case AppRoutes.responsiveRoute:
+        return MaterialPageRoute(
+          builder: (_) => I18n(child: const ResponsiveScreen()),
         );
       default:
         return MaterialPageRoute(

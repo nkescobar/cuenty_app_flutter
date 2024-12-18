@@ -6,4 +6,5 @@ class AppRoutes {
   static const String otherScreenRoute = 'other-screen';
   static const String signInScreenRoute = 'sign-in-screen';
   static const String allTransactionScreenRoute = 'all-transaction-screen';
+  static const String responsiveRoute = 'responsive-screen';
 }

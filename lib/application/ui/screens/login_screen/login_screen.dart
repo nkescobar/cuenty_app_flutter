@@ -26,7 +26,9 @@ class _LoginScreenState extends State<LoginScreen> {
                 const EdgeInsets.symmetric(horizontal: 16.0, vertical: 100.0),
             child: Column(children: [
               TweenAnimationBuilder(
-                tween: Tween<double>(begin: 13, end: expectedTitlesize),
+                tween: Tween<double>(
+                    begin: 55,
+                    end: expectedTitlesize), // para ver animacion cambiar begin
                 duration: const Duration(milliseconds: 2000),
                 builder: (context, sizeText, _) {
                   return Text(
